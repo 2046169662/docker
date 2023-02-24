@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Docker内置环境</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background-color: black;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .w50-left {
+            width: 50vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .w50-right {
+            width: 50vw;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        table {
+            text-align: center;
+        }
+
+        caption {
+            padding: 15px;
+        }
+
+        th, td {
+            width: 10vw;
+            padding: 15px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            const authorInfo = "制作者：fushixin<2046169662@qq.com>\n制作时间：2023-02-24\n制作版本：V1.0.0"
+            let author = document.getElementById("author");
+            let timer;
+            let len = 0;
+            timer = setInterval(() => {
+                author.innerText = authorInfo.substring(0, len);
+                if (len < authorInfo.length) {
+                    len++
+                } else {
+                    clearInterval(timer);
+                }
+            }, 100);
+        }
+    </script>
+</head>
+<body>
+<div class="w50-left">
+    <table>
+        <caption>Docker内置环境</caption>
+        <tr>
+            <th>内置环境</th>
+            <th>版本号</th>
+        </tr>
+        <tr>
+            <td>Java</td>
+            <td>8u361</td>
+        </tr>
+        <tr>
+            <td>Nginx</td>
+            <td>1.22.1</td>
+        </tr>
+        <tr>
+            <td>Redis</td>
+            <td>7.0.5</td>
+        </tr>
+        <tr>
+            <td>ActiveMQ</td>
+            <td>5.16.5</td>
+        </tr>
+        <tr>
+            <td>Kafka</td>
+            <td>2.13-3.3.1</td>
+        </tr>
+    </table>
+</div>
+<div class="w50-right">
+    <span id="author"></span>
+</div>
+</body>
+</html>
